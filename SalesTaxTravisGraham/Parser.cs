@@ -25,27 +25,18 @@ namespace SalesTaxTravisGraham
                 }
                 bool hasImport = HasImportedToken(tokens[INDEX_OF_OPTIONAL_IMPORTED]);
                 String itemName = "";
+                int offsetIndex = INDEX_OF_OPTIONAL_IMPORTED;
+                if (hasImport) { offsetIndex++; } //add to offset
                 int indexOfAt = 0;
-                if (hasImport)
-                {
-                    //if this has an import, the concatenation of (INDEX_OF_OPTIONAL_IMPORTED + 1 -> (index of "at" token - 1) in tokens is the item_name 
-                    Tuple<String, int> result = DetermineItemName(tokens, INDEX_OF_OPTIONAL_IMPORTED + 1);
-                    itemName = result.Item1;
-                    indexOfAt = result.Item2;
-
-                }
-                else
-                {
-                    //if this has no import, the concatenation of (INDEX_OF_OPTIONAL_IMPORTED -> (index of "at" token - 1) in tokens is the item_name 
-                    Tuple<String, int> result = DetermineItemName(tokens, INDEX_OF_OPTIONAL_IMPORTED);
-                    itemName = result.Item1;
-                    indexOfAt = result.Item2;
-                }
-
+                //if this has an import, the concatenation of (INDEX_OF_OPTIONAL_IMPORTED + 1 -> (index of "at" token - 1) in tokens is the item_name 
+                Tuple<String, int> result = DetermineItemName(tokens, offsetIndex);
+                itemName = result.Item1;
+                indexOfAt = result.Item2;
+                double basePrice = GetBasePrice(tokens[indexOfAt + 1]);
 
                 return true;
 
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 return false;
             }
@@ -71,6 +62,24 @@ namespace SalesTaxTravisGraham
                 sb.Append(token);
             }
             return null; //Something went wrong if we hit here.
+        }
+
+        private double GetBasePrice(String token)
+        {
+            try
+            {
+                return Double.Parse(token);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"Unable to parse '{token}' as a Double. Wrong Format. Now Aborting Program");
+                throw new FormatException();
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine($"Unable to parse '{token}' as a Double. Too Large of a value. Now Aborting Program");
+                throw new OverflowException();
+            }
         }
 
         private int GetQuantity(String token)
