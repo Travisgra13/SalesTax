@@ -7,7 +7,7 @@ namespace SalesTaxTravisGraham
     public class Parser
     {
         private IDictionary<String, List<Item.Item>> itemTable = new Dictionary<String, List<Item.Item>>();
-
+        private ItemDeterminer itemDeterminer = new ItemDeterminer();
         private const int INDEX_OF_QUANTITY = 0;
         private const int INDEX_OF_OPTIONAL_IMPORTED = 1;
 
@@ -35,7 +35,7 @@ namespace SalesTaxTravisGraham
                 itemName = result.Item1;
                 indexOfAt = result.Item2;
                 double basePrice = GetBasePrice(tokens[indexOfAt + 1]);
-
+                AddToTable(quantity, itemName, basePrice, hasImport);
                 return true;
 
             }catch(Exception)
@@ -43,6 +43,24 @@ namespace SalesTaxTravisGraham
                 return false;
             }
             
+        }
+
+        private void AddToTable(int quantity, String itemName, double basePrice, bool imported)
+        {
+            Item.Item item = itemDeterminer.Itemize(itemName, basePrice, quantity, imported);
+            if (itemTable.ContainsKey(itemName))
+            {
+                List<Item.Item> items = itemTable[itemName];
+                items.Add(item);
+                itemTable[itemName] = items;
+            }
+            else
+            {
+                List<Item.Item> items = new List<Item.Item>();
+                items.Add(item);
+                itemTable.Add(itemName, items);
+            }
+
         }
 
         private Boolean HasAtToken(String input)
