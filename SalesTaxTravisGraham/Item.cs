@@ -8,6 +8,8 @@ namespace Item
     {
         protected const double IMPORT_TAX_RATE = 0.05;
         protected const double SALES_TAX_RATE = 0.10;
+        protected const int ROUND_TAX_NEAREST_K = 5;
+        //protected const double ROUND_SALES_TAX_NEAREST_K = .01;
 
         protected bool imported;
         protected double basePrice;
