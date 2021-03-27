@@ -10,15 +10,15 @@ namespace SalesTaxTravisGraham
             Console.WriteLine("Instructions go here");
             Parser parser = new Parser();
             bool successfulEntry = true;
+            line = Console.ReadLine();
             while (!line.ToLower().Equals("done") && successfulEntry)
             {
-                line = Console.ReadLine();
                 successfulEntry = parser.ParseLine(line);
+                line = Console.ReadLine();
             }
 
-            
-
-
+            Outputter output = parser.GetOutputter();
+            output.ToString();
             
         }
     }

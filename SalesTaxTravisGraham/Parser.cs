@@ -123,6 +123,11 @@ namespace SalesTaxTravisGraham
         {
             return token.ToLower().Equals("imported");
         }
+
+        public Outputter GetOutputter()
+        {
+            return this.output;
+        }
         
     }
 }

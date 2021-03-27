@@ -26,7 +26,7 @@ namespace Item
 
         public double GetTotalPrice()
         {
-            return (this.basePrice + GetImportedTaxValue() + GetSalesTaxValue()) * quantity;
+            return (this.basePrice + GetImportedTaxValue() + GetSalesTaxValue());
         }
 
         public abstract double GetSalesTaxValue();
@@ -37,7 +37,7 @@ namespace Item
             {
                 return 0.0;
             }
-            double preRoundValue = basePrice * IMPORT_TAX_RATE;
+            double preRoundValue = basePrice * IMPORT_TAX_RATE * quantity;
             return preRoundValue;
         }
 
@@ -59,6 +59,11 @@ namespace Item
         public bool isImported()
         {
             return this.imported;
+        }
+
+        public int GetQuantity()
+        {
+            return this.quantity;
         }
 
     }
