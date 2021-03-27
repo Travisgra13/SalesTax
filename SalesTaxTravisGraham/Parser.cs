@@ -57,7 +57,8 @@ namespace SalesTaxTravisGraham
                 String token = tokens[i];
                 if (token.Equals("at"))
                 {
-                    String concatString = sb.Remove(sb.Length - 2, sb.Length - 1).ToString(); //remove last space
+                    sb.Length -= 1;
+                    String concatString = sb.ToString(); //remove last space
                     return new Tuple<string, int>(concatString, i); 
                 }
                 sb.Append(token);
