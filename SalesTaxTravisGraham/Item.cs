@@ -13,18 +13,20 @@ namespace Item
 
         protected bool imported;
         protected double basePrice;
+        protected int quantity;
         protected String itemName;
 
-        public Item(String itemName, double basePrice, bool imported)
+        public Item(String itemName, double basePrice, int quantity, bool imported)
         {
             this.itemName = itemName;
             this.basePrice = basePrice;
+            this.quantity = quantity;
             this.imported = imported;
         }
 
         public double GetTotalPrice()
         {
-            return this.basePrice + GetImportedTaxValue() + GetSalesTaxValue();
+            return (this.basePrice + GetImportedTaxValue() + GetSalesTaxValue()) * quantity;
         }
 
         public abstract double GetSalesTaxValue();

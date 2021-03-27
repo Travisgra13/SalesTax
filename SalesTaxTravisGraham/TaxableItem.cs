@@ -6,7 +6,7 @@ namespace Item
 {
     class TaxableItem : Item
     {
-        public TaxableItem(String itemName, double basePrice, bool imported) : base(itemName, basePrice, imported) { }
+        public TaxableItem(String itemName, double basePrice, int quantity, bool imported) : base(itemName, basePrice, quantity, imported) { }
 
         public override double GetSalesTaxValue()
         {

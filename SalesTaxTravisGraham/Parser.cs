@@ -6,7 +6,8 @@ namespace SalesTaxTravisGraham
 {
     public class Parser
     {
-        private IDictionary<String, int> table = new Dictionary<String, int>();
+        private IDictionary<String, List<Item.Item>> itemTable = new Dictionary<String, List<Item.Item>>();
+
         private const int INDEX_OF_QUANTITY = 0;
         private const int INDEX_OF_OPTIONAL_IMPORTED = 1;
 
