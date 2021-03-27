@@ -10,6 +10,7 @@ namespace Item
 
         public override double GetSalesTaxValue()
         {
+            //double preRoundValue = basePrice * SALES_TAX_RATE * quantity;
             double preRoundValue = basePrice * SALES_TAX_RATE;
             return RoundUpValue(preRoundValue, ROUND_TAX_NEAREST_K);
         }

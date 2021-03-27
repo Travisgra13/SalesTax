@@ -18,7 +18,7 @@ namespace SalesTaxTravisGraham
             }
 
             Outputter output = parser.GetOutputter();
-            output.ToString();
+            Console.Write(output.ToString());
             
         }
     }
