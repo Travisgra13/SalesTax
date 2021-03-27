@@ -30,7 +30,8 @@ namespace Item
         protected double GetImportedTaxValue()
         {
             double preRoundValue = basePrice * IMPORT_TAX_RATE;
-            return RoundUpValue(preRoundValue);
+            //return RoundUpValue(preRoundValue); Figure out if we should round this up as well
+            return preRoundValue;
         }
 
         protected double RoundUpValue(double value)

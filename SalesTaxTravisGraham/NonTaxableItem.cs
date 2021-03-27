@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Item
 {
-    class Food : Item
+    class NonTaxableItem : Item
     {
-        public Food(String itemName, double basePrice, bool imported) : base(itemName, basePrice, imported) { }
+        public NonTaxableItem(String itemName, double basePrice, bool imported) : base(itemName, basePrice, imported) { }
 
         public override double GetSalesTaxValue()
         {
