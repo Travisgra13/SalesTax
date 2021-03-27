@@ -10,7 +10,7 @@ namespace SalesTaxTravisGraham
             //output instructions here
             while (line.ToLower().Equals("done"))
             {
-
+                //check bool of Parser to ensure valid input
             }
             
             Console.WriteLine("Hello World!");
