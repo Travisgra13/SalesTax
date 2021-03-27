@@ -8,7 +8,7 @@ namespace Item
     {
         protected const double IMPORT_TAX_RATE = 0.05;
         protected const double SALES_TAX_RATE = 0.10;
-        protected const int ROUND_TAX_NEAREST_K = 5;
+        protected const int ROUND_TAX_NEAREST_K = 20; //round to nearest .05
         //protected const double ROUND_SALES_TAX_NEAREST_K = .01;
 
         protected bool imported;
@@ -44,7 +44,7 @@ namespace Item
 
         protected double RoundUpValue(double value, int places)
         {
-            return Math.Round((value / places) * places);
+            return Math.Round((value * places)) / places;
         }
 
         public double GetBasePrice()
