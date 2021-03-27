@@ -20,24 +20,41 @@ namespace Item
             this.imported = imported;
         }
 
-        public String GetItemType()
+        public double GetTotalPrice()
         {
-            return this.GetType().Name;
+            return this.basePrice + GetImportedTaxValue() + GetSalesTaxValue();
         }
 
         public abstract double GetSalesTaxValue();
 
         protected double GetImportedTaxValue()
         {
+            if (!this.imported)
+            {
+                return 0.0;
+            }
             double preRoundValue = basePrice * IMPORT_TAX_RATE;
-            //return RoundUpValue(preRoundValue); Figure out if we should round this up as well
             return preRoundValue;
         }
 
-        protected double RoundUpValue(double value)
+        protected double RoundUpValue(double value, int places)
         {
-            //todo fixme
-            return value;
+            return Math.Round((value / places) * places);
+        }
+
+        public double GetBasePrice()
+        {
+            return this.basePrice;
+        }
+
+        public String GetItemName()
+        {
+            return this.itemName;
+        }
+
+        public bool isImported()
+        {
+            return this.imported;
         }
 
     }
