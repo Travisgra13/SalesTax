@@ -6,7 +6,8 @@ namespace SalesTaxTravisGraham
 {
     public class Parser
     {
-        private IDictionary<String, List<Item.Item>> itemTable = new Dictionary<String, List<Item.Item>>();
+        //private IDictionary<String, List<Item.Item>> itemTable = new Dictionary<String, List<Item.Item>>();
+        private Outputter output = new Outputter();
         private ItemDeterminer itemDeterminer = new ItemDeterminer();
         private const int INDEX_OF_QUANTITY = 0;
         private const int INDEX_OF_OPTIONAL_IMPORTED = 1;
@@ -31,7 +32,7 @@ namespace SalesTaxTravisGraham
                 if (hasImport) { offsetIndex++; } //add to offset
                 int indexOfAt = 0;
                 //if this has an import, the concatenation of (INDEX_OF_OPTIONAL_IMPORTED + 1 -> (index of "at" token - 1) in tokens is the item_name 
-                Tuple<String, int> result = DetermineItemName(tokens, offsetIndex);
+                Tuple<String, int> result = DetermineItemName(tokens, offsetIndex, hasImport);
                 itemName = result.Item1;
                 indexOfAt = result.Item2;
                 double basePrice = GetBasePrice(tokens[indexOfAt + 1]);
@@ -48,17 +49,17 @@ namespace SalesTaxTravisGraham
         private void AddToTable(int quantity, String itemName, double basePrice, bool imported)
         {
             Item.Item item = itemDeterminer.Itemize(itemName, basePrice, quantity, imported);
-            if (itemTable.ContainsKey(itemName))
+            if (output.ContainsKey(itemName))
             {
-                List<Item.Item> items = itemTable[itemName];
+                List<Item.Item> items = output[itemName];
                 items.Add(item);
-                itemTable[itemName] = items;
+                output[itemName] = items;
             }
             else
             {
                 List<Item.Item> items = new List<Item.Item>();
                 items.Add(item);
-                itemTable.Add(itemName, items);
+                output.Add(itemName, items);
             }
 
         }
@@ -68,9 +69,10 @@ namespace SalesTaxTravisGraham
             return input.ToLower().Contains("at");
         }
 
-        private Tuple<String, int> DetermineItemName(String[] tokens, int startIndex)
+        private Tuple<String, int> DetermineItemName(String[] tokens, int startIndex, bool isImported)
         {//returns a tuple that has the concatenated String as well as the index of the "at"
             StringBuilder sb = new StringBuilder();
+            if (isImported) { sb.Append("Imported "); }
             for (int i = startIndex; i < tokens.Length; i++)
             {
                 String token = tokens[i];

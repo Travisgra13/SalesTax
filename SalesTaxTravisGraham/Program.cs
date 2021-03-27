@@ -14,9 +14,11 @@ namespace SalesTaxTravisGraham
             {
                 line = Console.ReadLine();
                 successfulEntry = parser.ParseLine(line);
-                //check bool of Parser to ensure valid input
-
             }
+
+            
+
+
             
         }
     }
