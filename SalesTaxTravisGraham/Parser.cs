@@ -7,7 +7,8 @@ namespace SalesTaxTravisGraham
     public class Parser
     {
         private IDictionary<String, int> table = new Dictionary<String, int>();
-        private const int INDEX_OF_QUANTITY = 1;
+        private const int INDEX_OF_QUANTITY = 0;
+        private const int INDEX_OF_OPTIONAL_IMPORTED = 1;
 
         public bool ParseLine(String line)
         {
@@ -17,6 +18,31 @@ namespace SalesTaxTravisGraham
             try
             {
                 int quantity = GetQuantity(tokens[INDEX_OF_QUANTITY]);
+                if (!HasAtToken(line))
+                {
+                    //we don't have an at token
+                    return false;
+                }
+                bool hasImport = HasImportedToken(tokens[INDEX_OF_OPTIONAL_IMPORTED]);
+                String itemName = "";
+                int indexOfAt = 0;
+                if (hasImport)
+                {
+                    //if this has an import, the concatenation of (INDEX_OF_OPTIONAL_IMPORTED + 1 -> (index of "at" token - 1) in tokens is the item_name 
+                    Tuple<String, int> result = DetermineItemName(tokens, INDEX_OF_OPTIONAL_IMPORTED + 1);
+                    itemName = result.Item1;
+                    indexOfAt = result.Item2;
+
+                }
+                else
+                {
+                    //if this has no import, the concatenation of (INDEX_OF_OPTIONAL_IMPORTED -> (index of "at" token - 1) in tokens is the item_name 
+                    Tuple<String, int> result = DetermineItemName(tokens, INDEX_OF_OPTIONAL_IMPORTED);
+                    itemName = result.Item1;
+                    indexOfAt = result.Item2;
+                }
+
+
                 return true;
 
             }catch(Exception ex)
@@ -26,18 +52,43 @@ namespace SalesTaxTravisGraham
             
         }
 
+        private Boolean HasAtToken(String input)
+        {
+            return input.ToLower().Contains("at");
+        }
+
+        private Tuple<String, int> DetermineItemName(String[] tokens, int startIndex)
+        {//returns a tuple that has the concatenated String as well as the index of the "at"
+            StringBuilder sb = new StringBuilder();
+            for (int i = startIndex; i < tokens.Length; i++)
+            {
+                String token = tokens[i];
+                if (token.Equals("at"))
+                {
+                    String concatString = sb.Remove(sb.Length - 2, sb.Length - 1).ToString(); //remove last space
+                    return new Tuple<string, int>(concatString, i); 
+                }
+                sb.Append(token);
+            }
+            return null; //Something went wrong if we hit here.
+        }
+
         private int GetQuantity(String token)
         {
             try
             {
-                return 0;
+                return Int32.Parse(token);
             }catch(FormatException)
             {
                 Console.WriteLine($"Unable to parse '{token}' as a Quantity. Now Aborting Program");
                 throw new FormatException();
-                return -1;
             }
 
+        }
+
+        private bool HasImportedToken(String token)
+        {
+            return token.ToLower().Equals("imported");
         }
         
     }
