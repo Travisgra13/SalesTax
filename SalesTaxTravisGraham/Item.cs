@@ -6,6 +6,9 @@ namespace Item
 {
     public abstract class Item
     {
+        protected const double IMPORT_TAX_RATE = 0.05;
+        protected const double SALES_TAX_RATE = 0.10;
+
         protected bool imported;
         protected double basePrice;
         protected String itemName;
@@ -26,10 +29,16 @@ namespace Item
 
         public abstract double getSalesTaxValue();
 
-        protected double roundSalesTax(double salesTax)
+        protected double getImportedTaxValue()
+        {
+            double preRoundValue = basePrice * IMPORT_TAX_RATE;
+            return roundUpValue(preRoundValue);
+        }
+
+        protected double roundUpValue(double value)
         {
             //todo fixme
-            return basePrice;
+            return value;
         }
 
     }
