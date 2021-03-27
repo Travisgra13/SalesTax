@@ -20,22 +20,20 @@ namespace Item
             this.imported = imported;
         }
 
-
-
-        public String getItemType()
+        public String GetItemType()
         {
             return this.GetType().Name;
         }
 
-        public abstract double getSalesTaxValue();
+        public abstract double GetSalesTaxValue();
 
-        protected double getImportedTaxValue()
+        protected double GetImportedTaxValue()
         {
             double preRoundValue = basePrice * IMPORT_TAX_RATE;
-            return roundUpValue(preRoundValue);
+            return RoundUpValue(preRoundValue);
         }
 
-        protected double roundUpValue(double value)
+        protected double RoundUpValue(double value)
         {
             //todo fixme
             return value;

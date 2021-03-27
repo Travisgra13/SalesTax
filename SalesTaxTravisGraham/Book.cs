@@ -8,7 +8,7 @@ namespace Item
     {
         public Book(String itemName, double basePrice, bool imported) : base(itemName, basePrice, imported) { }
 
-        public override double getSalesTaxValue()
+        public override double GetSalesTaxValue()
         {
             return 0.0;
         }
