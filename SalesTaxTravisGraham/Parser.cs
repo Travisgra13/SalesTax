@@ -21,6 +21,7 @@ namespace SalesTaxTravisGraham
                 if (!HasAtToken(line))
                 {
                     //we don't have an at token
+                    Console.WriteLine("There is no 'at' in this string. Try again");
                     return false;
                 }
                 bool hasImport = HasImportedToken(tokens[INDEX_OF_OPTIONAL_IMPORTED]);
@@ -60,6 +61,7 @@ namespace SalesTaxTravisGraham
                     return new Tuple<string, int>(concatString, i); 
                 }
                 sb.Append(token);
+                sb.Append(" ");
             }
             return null; //Something went wrong if we hit here.
         }
