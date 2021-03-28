@@ -77,5 +77,27 @@ namespace SalesTaxUnitTests
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
+
+        [TestMethod]
+        public void TestCase2()
+        {
+            Item.Item importedFood = new Item.NonTaxableItem("Imported box of chocolates", 10.00, 1, true);
+            Item.Item importedPerfume = new Item.TaxableItem("Imported bottle of perfume", 47.50, 1, true);
+
+            Outputter outputter = new Outputter();
+            List<Item.Item> importedFoodList = new List<Item.Item>();
+            importedFoodList.Add(importedFood);
+            List<Item.Item> importedPerfumeList = new List<Item.Item>();
+            importedPerfumeList.Add(importedPerfume);
+
+            outputter.Add(importedFood.GetItemName(), importedFoodList);
+            outputter.Add(importedPerfume.GetItemName(), importedPerfumeList);
+            string expected = "Imported box of chocolates: 10.50\n" +
+                                "Imported bottle of perfume: 54.65\n" +
+                                "Sales Taxes: 7.65\n" +
+                                "Total: 65.15\n";
+            Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
+            Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }
