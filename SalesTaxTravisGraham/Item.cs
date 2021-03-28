@@ -31,7 +31,8 @@ namespace Item
 
         public abstract double GetSalesTaxValue();
 
-        protected double GetImportedTaxValue()
+
+        public double GetImportedTaxValue()
         {
             if (!this.imported)
             {
