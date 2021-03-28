@@ -40,11 +40,11 @@ namespace SalesTaxUnitTests
             outputter.Add(music.GetItemName(), musicList);
             outputter.Add(chocolate.GetItemName(), chocolateList);
 
-            string expected = "Book: 24.98 (2 @ 12.49)\n" +
-                                "Music CD: 16.49\n" +
-                                "Chocolate bar: 0.85\n" +
-                                "Sales Taxes: 1.50\n" +
-                                "Total: 42.32\n";
+            string expected = "Book: $24.98 (2 @ $12.49)\n" +
+                                "Music CD: $16.49\n" +
+                                "Chocolate bar: $0.85\n" +
+                                "Sales Taxes: $1.50\n" +
+                                "Total: $42.32\n";
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
@@ -69,11 +69,11 @@ namespace SalesTaxUnitTests
             outputter.Add(music.GetItemName(), musicList);
             outputter.Add(chocolate.GetItemName(), chocolateList);
 
-            string expected = "Book: 24.98 (2 @ 12.49)\n" +
-                                "Music CD: 16.49\n" +
-                                "Chocolate bar: 0.85\n" +
-                                "Sales Taxes: 1.50\n" +
-                                "Total: 42.32\n";
+            string expected = "Book: $24.98 (2 @ $12.49)\n" +
+                                "Music CD: $16.49\n" +
+                                "Chocolate bar: $0.85\n" +
+                                "Sales Taxes: $1.50\n" +
+                                "Total: $42.32\n";
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
@@ -92,10 +92,10 @@ namespace SalesTaxUnitTests
 
             outputter.Add(importedFood.GetItemName(), importedFoodList);
             outputter.Add(importedPerfume.GetItemName(), importedPerfumeList);
-            string expected = "Imported box of chocolates: 10.50\n" +
-                                "Imported bottle of perfume: 54.65\n" +
-                                "Sales Taxes: 7.65\n" +
-                                "Total: 65.15\n";
+            string expected = "Imported box of chocolates: $10.50\n" +
+                                "Imported bottle of perfume: $54.65\n" +
+                                "Sales Taxes: $7.65\n" +
+                                "Total: $65.15\n";
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
@@ -128,12 +128,12 @@ namespace SalesTaxUnitTests
             outputter.Add(medicine.GetItemName(), medicineList);
             outputter.Add(importedFood1.GetItemName(), importedFoodList);
 
-            string expected = "Imported bottle of perfume: 32.19\n" +
-                                "Bottle of perfume: 20.89\n" +
-                                "Packet of headache pills: 9.75\n" +
-                                "Imported box of chocolates: 23.70(2 @ 11.25)\n" +
-                                "Sales Taxes: 7.30\n" +
-                                "Total: 86.53\n";
+            string expected = "Imported bottle of perfume: $32.19\n" +
+                                "Bottle of perfume: $20.89\n" +
+                                "Packet of headache pills: $9.75\n" +
+                                "Imported box of chocolates: $23.70(2 @ $11.25)\n" +
+                                "Sales Taxes: $7.30\n" +
+                                "Total: $86.53\n";
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
@@ -164,12 +164,12 @@ namespace SalesTaxUnitTests
             outputter.Add(medicine.GetItemName(), medicineList);
             outputter.Add(importedFood1.GetItemName(), importedFoodList);
 
-            string expected = "Imported bottle of perfume: 32.19\n" +
-                                "Bottle of perfume: 20.89\n" +
-                                "Packet of headache pills: 9.75\n" +
-                                "Imported box of chocolates: 23.70(2 @ 11.25)\n" +
-                                "Sales Taxes: 7.30\n" +
-                                "Total: 86.53\n";
+            string expected = "Imported bottle of perfume: $32.19\n" +
+                                "Bottle of perfume: $20.89\n" +
+                                "Packet of headache pills: $9.75\n" +
+                                "Imported box of chocolates: $23.70(2 @ $11.25)\n" +
+                                "Sales Taxes: $7.30\n" +
+                                "Total: $86.53\n";
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
@@ -179,8 +179,8 @@ namespace SalesTaxUnitTests
         {
 
             Outputter outputter = new Outputter();
-            string expected =   "Sales Taxes: 0.00\n" +
-                                "Total: 0.00\n";
+            string expected =   "Sales Taxes: $0.00\n" +
+                                "Total: $0.00\n";
             Tuple<String, String> result = normalizeExpectedActual(expected, outputter.ToString());
             Assert.IsTrue(String.Equals(result.Item1, result.Item2, StringComparison.OrdinalIgnoreCase));
         }
