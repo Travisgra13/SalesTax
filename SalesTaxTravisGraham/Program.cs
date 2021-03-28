@@ -4,8 +4,8 @@ namespace SalesTaxTravisGraham
 {
     class Program
     {
-        private const String HELP = "Enter items of receipts in the form: QUANTITY[\"IMPORTED\"] ITEM_NAME at BASE_PRICE";
-        private const String EXTRA_HELP = "Enter items of receipts in the form: QUANTITY[\"IMPORTED\"] ITEM_NAME at BASE_PRICE. Imported is an optional argument";
+        private const String HELP = "Enter items of receipts in the form: QUANTITY[\"IMPORTED\"] ITEM_NAME at BASE_PRICE followed by 'done' when it is complete.";
+        private const String EXTRA_HELP = "Enter items of receipts in the form: QUANTITY[\"IMPORTED\"] ITEM_NAME at BASE_PRICE. Imported is an optional argument. Remember to enter 'done' when finished adding items.";
         private const String VALID_MESSAGE = "Successfully Added item";
         static void Main(string[] args)
         {
