@@ -1,0 +1,12 @@
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.exe
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.deps.json
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.runtimeconfig.json
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.runtimeconfig.dev.json
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.dll
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.pdb
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.AssemblyInfoInputs.cache
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.AssemblyInfo.cs
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.csproj.CoreCompileInputs.cache
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.dll
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.pdb
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.genruntimeconfig.cache
