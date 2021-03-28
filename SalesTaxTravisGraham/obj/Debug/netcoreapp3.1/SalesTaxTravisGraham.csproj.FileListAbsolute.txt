@@ -10,3 +10,4 @@ C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\ob
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.dll
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.pdb
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.genruntimeconfig.cache
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxTravisGraham\obj\Debug\netcoreapp3.1\SalesTaxTravisGraham.csprojAssemblyReference.cache
