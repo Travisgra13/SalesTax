@@ -94,3 +94,4 @@ C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\Sales
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.dll
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.pdb
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.genruntimeconfig.cache
+C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.csprojAssemblyReference.cache

@@ -46,7 +46,7 @@ namespace Item
 
         protected double RoundUpValue(double value, int places)
         {
-            return Math.Round((value * places)) / places;
+            return Math.Ceiling((value * places)) / places;
         }
 
         public double GetBasePrice()
