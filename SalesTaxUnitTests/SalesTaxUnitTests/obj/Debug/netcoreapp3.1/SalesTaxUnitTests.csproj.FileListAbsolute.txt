@@ -87,7 +87,6 @@ C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\Sales
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.dll
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\bin\Debug\netcoreapp3.1\SalesTaxTravisGraham.pdb
-C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.csprojAssemblyReference.cache
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.AssemblyInfoInputs.cache
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.AssemblyInfo.cs
 C:\Users\Travis Graham\source\repos\SalesTaxTravisGraham\SalesTaxUnitTests\SalesTaxUnitTests\obj\Debug\netcoreapp3.1\SalesTaxUnitTests.csproj.CoreCompileInputs.cache
