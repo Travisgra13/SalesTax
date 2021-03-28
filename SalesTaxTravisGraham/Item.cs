@@ -38,9 +38,7 @@ namespace Item
             {
                 return 0.0;
             }
-            //double preRoundValue = basePrice * IMPORT_TAX_RATE * quantity;
             double preRoundValue = basePrice * IMPORT_TAX_RATE;
-            //return preRoundValue;
             return RoundUpValue(preRoundValue, ROUND_TAX_NEAREST_K);
         }
 

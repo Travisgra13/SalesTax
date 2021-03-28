@@ -39,7 +39,13 @@ namespace SalesTaxTravisGraham
                 AddToTable(quantity, itemName, basePrice, hasImport);
                 return true;
 
-            }catch(Exception)
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                Console.WriteLine($"Unable to parse '{line}' Try again.");
+                return false;
+            }
+            catch(Exception)
             {
                 return false;
             }
@@ -96,12 +102,12 @@ namespace SalesTaxTravisGraham
             }
             catch (FormatException)
             {
-                Console.WriteLine($"Unable to parse '{token}' as a Double. Wrong Format. Now Aborting Program");
+                Console.WriteLine($"Unable to parse '{token}' as a Double. Wrong Format. Try Again.");
                 throw new FormatException();
             }
             catch (OverflowException)
             {
-                Console.WriteLine($"Unable to parse '{token}' as a Double. Too Large of a value. Now Aborting Program");
+                Console.WriteLine($"Unable to parse '{token}' as a Double. Too Large of a value. Try Again.");
                 throw new OverflowException();
             }
         }
@@ -113,7 +119,7 @@ namespace SalesTaxTravisGraham
                 return Int32.Parse(token);
             }catch(FormatException)
             {
-                Console.WriteLine($"Unable to parse '{token}' as a Quantity. Now Aborting Program");
+                Console.WriteLine($"Unable to parse '{token}' as a Quantity. Try Again.");
                 throw new FormatException();
             }
 
