@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Item
 {
-    class NonTaxableItem : Item
+    public class NonTaxableItem : Item
     {
         public NonTaxableItem(String itemName, double basePrice, int quantity, bool imported) : base(itemName, basePrice, quantity, imported) { }
 
