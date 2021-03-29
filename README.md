@@ -11,7 +11,7 @@ I had to make some assumptions about the input that was given. The following are
 5. The user will input in the form:
 
 ```bash
-for each item: QUANTITY ["IMPORTED"] ITEM_NAME "at" BASE_PRICE  
+for each item: "QUANTITY ['IMPORTED'] ITEM_NAME 'at' BASE_PRICE"
 Followed by "done" when the user is done inputting item.
 ```
 
