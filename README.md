@@ -14,3 +14,7 @@ I had to make some assumptions about the input that was given. The following are
 for each item: QUANTITY ["IMPORTED"] ITEM_NAME "at" BASE_PRICE  
 Followed by "done" when the user is done inputting item.
 ```
+
+## Testing
+
+1. Tests were run by attaching it to the .dll in the bin. Hopefully that is fine for your testing purposes.
