@@ -12,7 +12,7 @@ I had to make some assumptions about the input that was given. The following are
 
 ```bash
 for each item: "QUANTITY ['IMPORTED'] ITEM_NAME 'at' BASE_PRICE"
-Followed by "done" when the user is done inputting item.
+Followed by "done" when the user is done inputting items.
 ```
 
 ## Testing
